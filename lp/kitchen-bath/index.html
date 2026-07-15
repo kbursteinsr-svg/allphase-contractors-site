@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Kitchen & Bathroom Remodels | All Phase Contractors</title>
-<meta name="description" content="Concrete to countertops, under one licensed contractor. No juggling separate crews for demo, plumbing, tile, and finish work. Every trade in-house, one poi" />
+<meta name="description" content="Demo, plumbing, electrical, tile, cabinets, countertops, finish carpentry — all our own crew, all under one license. No juggling three separate quotes. One" />
 <link rel="canonical" href="https://allphasecontractorsfl.com/lp/kitchen-bath/" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,7 +33,6 @@ fbq('track', 'PageView');
   html { scroll-behavior: smooth; }
   body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); line-height: 1.5; background: var(--white); }
 
-  /* Header — minimal, no nav */
   .site-header {
     background: var(--navy);
     padding: 18px 40px;
@@ -45,50 +44,57 @@ fbq('track', 'PageView');
   .header-cta { color: var(--white); text-decoration: none; font-weight: 700; font-size: 15px; }
   .header-cta small { display: block; font-size: 10px; opacity: 0.65; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2px; font-weight: 500; }
 
-  /* Hero */
   .hero {
-    background: linear-gradient(rgba(10, 18, 32, 0.72), rgba(10, 18, 32, 0.82)), url('../../images/gallery-1/bath-vanity-shower.jpg') center/cover no-repeat;
+    position: relative;
     color: var(--white);
-    padding: 100px 40px 90px;
-    text-align: left;
+    padding: 90px 40px 90px;
+    overflow: hidden;
   }
-  .hero-inner { max-width: 1200px; margin: 0 auto; }
-  .eyebrow { color: var(--red); font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 18px; }
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: url('/images/lp/kb-hero.png') center/cover no-repeat;
+    z-index: 0;
+  }
+  .hero::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(10, 18, 32, 0.92) 0%, rgba(10, 18, 32, 0.75) 45%, rgba(10, 18, 32, 0.35) 100%);
+    z-index: 1;
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
+  .eyebrow { color: var(--red); font-weight: 700; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px; }
   .hero h1 {
-    font-size: clamp(44px, 6vw, 82px);
+    font-size: clamp(40px, 5.5vw, 72px);
     line-height: 1.02;
     font-weight: 800;
-    letter-spacing: -0.02em;
-    margin-bottom: 24px;
-    max-width: 900px;
+    letter-spacing: -0.025em;
+    margin-bottom: 22px;
+    max-width: 780px;
   }
-  .hero h1 .light { font-weight: 300; color: rgba(255,255,255,0.75); display: block; }
-  .hero p { font-size: 18px; max-width: 620px; opacity: 0.9; margin-bottom: 40px; }
-  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+  .hero h1 .light { font-weight: 300; color: rgba(255,255,255,0.72); display: block; margin-top: 4px; }
+  .hero p { font-size: 17px; max-width: 580px; opacity: 0.9; margin-bottom: 38px; line-height: 1.55; }
+  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
   .btn {
-    display: inline-block; padding: 18px 32px; font-size: 15px; font-weight: 700;
-    text-decoration: none; text-transform: uppercase; letter-spacing: 0.06em;
-    border: 2px solid transparent; transition: all 0.2s;
-    cursor: pointer;
+    display: inline-block; padding: 17px 30px; font-size: 14px; font-weight: 700;
+    text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em;
+    border: 2px solid transparent; transition: all 0.2s; cursor: pointer;
   }
   .btn-primary { background: var(--red); color: var(--white); border-color: var(--red); }
   .btn-primary:hover { background: var(--red-hover); border-color: var(--red-hover); }
-  .btn-secondary { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.5); }
+  .btn-secondary { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.55); }
   .btn-secondary:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
 
-  /* Value pillars */
   .pillars { background: var(--cream); padding: 80px 40px; }
-  .pillars-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-  .pillar { }
-  .pillar-num { color: var(--red); font-weight: 700; font-size: 13px; letter-spacing: 0.12em; margin-bottom: 12px; }
-  .pillar h3 { font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+  .pillars-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px; }
+  .pillar-num { color: var(--red); font-weight: 700; font-size: 12px; letter-spacing: 0.14em; margin-bottom: 14px; }
+  .pillar h3 { font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 12px; line-height: 1.25; }
   .pillar p { color: var(--text-mute); font-size: 15px; line-height: 1.6; }
 
-  /* Gallery */
   .gallery { padding: 80px 40px; background: var(--white); }
   .gallery-inner { max-width: 1200px; margin: 0 auto; }
   .gallery h2 {
-    font-size: clamp(30px, 4vw, 44px);
+    font-size: clamp(28px, 3.8vw, 40px);
     font-weight: 800;
     color: var(--navy);
     letter-spacing: -0.02em;
@@ -98,19 +104,20 @@ fbq('track', 'PageView');
   .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .gallery-item {
     aspect-ratio: 4 / 3;
-    background: #eee center/cover no-repeat;
+    background: #f0f0f0 center/cover no-repeat;
     position: relative;
     overflow: hidden;
+    border-radius: 2px;
   }
   .gallery-item::after {
     content: attr(data-caption);
     position: absolute; inset: auto 0 0 0;
-    padding: 12px 16px;
-    background: linear-gradient(transparent, rgba(10,18,32,0.9));
+    padding: 14px 18px;
+    background: linear-gradient(transparent, rgba(10,18,32,0.85));
     color: var(--white); font-size: 13px; font-weight: 600;
+    line-height: 1.3;
   }
 
-  /* Form */
   .form-section {
     background: var(--navy);
     color: var(--white);
@@ -118,16 +125,16 @@ fbq('track', 'PageView');
   }
   .form-inner { max-width: 780px; margin: 0 auto; }
   .form-section h2 {
-    font-size: clamp(30px, 4vw, 44px);
+    font-size: clamp(28px, 3.8vw, 40px);
     font-weight: 800;
     letter-spacing: -0.02em;
     margin-bottom: 12px;
   }
-  .form-section p.lead { font-size: 17px; opacity: 0.75; margin-bottom: 36px; max-width: 580px; }
+  .form-section p.lead { font-size: 16px; opacity: 0.75; margin-bottom: 36px; max-width: 580px; line-height: 1.55; }
   .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
   .form-group { display: flex; flex-direction: column; }
   .form-group.full { grid-column: 1 / -1; }
-  .form-group label { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; margin-bottom: 8px; text-transform: uppercase; opacity: 0.85; }
+  .form-group label { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; margin-bottom: 8px; text-transform: uppercase; opacity: 0.85; }
   .form-group label .hint { font-weight: 400; opacity: 0.55; text-transform: none; letter-spacing: 0; }
   .form-group input, .form-group select {
     padding: 14px 16px; font-size: 15px; font-family: inherit;
@@ -139,7 +146,7 @@ fbq('track', 'PageView');
   .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--red); background: rgba(255,255,255,0.10); }
   .form-group select { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M0 0l6 8 6-8z' fill='%23fff' opacity='.55'/></svg>"); background-repeat: no-repeat; background-position: calc(100% - 18px) center; padding-right: 44px; }
   .form-submit { grid-column: 1 / -1; margin-top: 12px; }
-  .form-submit button { width: 100%; padding: 20px; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--red); color: var(--white); border: none; cursor: pointer; transition: background 0.2s; }
+  .form-submit button { width: 100%; padding: 20px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; background: var(--red); color: var(--white); border: none; cursor: pointer; transition: background 0.2s; }
   .form-submit button:hover { background: var(--red-hover); }
   .form-submit button:disabled { opacity: 0.55; cursor: wait; }
 
@@ -147,17 +154,16 @@ fbq('track', 'PageView');
   .form-success h3 { font-size: 24px; font-weight: 800; margin-bottom: 10px; }
   .form-success p { opacity: 0.85; }
 
-  .form-fine { margin-top: 28px; font-size: 13px; opacity: 0.55; }
+  .form-fine { margin-top: 28px; font-size: 12px; opacity: 0.55; }
   .form-fine a { color: var(--white); }
 
-  /* Footer */
   .footer { background: var(--navy-deep); color: rgba(255,255,255,0.6); padding: 32px 40px; text-align: center; font-size: 13px; letter-spacing: 0.04em; }
   .footer strong { color: var(--white); }
 
   @media (max-width: 800px) {
     .site-header { padding: 14px 20px; }
-    .hero { padding: 60px 20px; }
-    .pillars, .gallery, .form-section { padding: 60px 20px; }
+    .hero { padding: 56px 20px 60px; }
+    .pillars, .gallery, .form-section { padding: 56px 20px; }
     .pillars-inner, .gallery-grid { grid-template-columns: 1fr; gap: 32px; }
     .gallery-grid { gap: 12px; }
     .form-grid { grid-template-columns: 1fr; }
@@ -183,10 +189,10 @@ fbq('track', 'PageView');
   <div class="hero-inner">
     <div class="eyebrow">Licensed General Contractor · Hernando · Pasco · Pinellas · Citrus</div>
     <h1>
-      Dream Kitchen.
-      <span class="light">Dream Bath.</span>
+      Dream kitchen. Dream bath.
+      <span class="light">One contractor. Every trade in-house.</span>
     </h1>
-    <p>Concrete to countertops, under one licensed contractor. No juggling separate crews for demo, plumbing, tile, and finish work. Every trade in-house, one point of contact, one warranty. Serving Hernando, Pasco, Pinellas & Citrus.</p>
+    <p>Demo, plumbing, electrical, tile, cabinets, countertops, finish carpentry — all our own crew, all under one license. No juggling three separate quotes. One team, one warranty, one point of contact.</p>
     <div class="hero-ctas">
       <a href="#form" class="btn btn-primary">Get a Free Estimate</a>
       <a href="tel:9414124901" class="btn btn-secondary">Call 941-412-4901</a>
@@ -198,18 +204,18 @@ fbq('track', 'PageView');
   <div class="pillars-inner">
         <div class="pillar">
       <div class="pillar-num">01</div>
-      <h3>In-House Trades</h3>
-      <p>Demo, plumbing rough-in, electrical, tile, cabinets, countertops, finish carpentry — every trade is our own crew under one license.</p>
+      <h3>Every trade under our roof</h3>
+      <p>Our own demo crew. Our own plumbers. Our own tile setters. Our own cabinet install team. Nothing gets subbed out to someone we don't control.</p>
     </div>
     <div class="pillar">
       <div class="pillar-num">02</div>
-      <h3>Design & Build Together</h3>
-      <p>We plan the layout, source the materials, and build it. You get one team, one price, one schedule — not three quotes to reconcile.</p>
+      <h3>Real timelines. Written.</h3>
+      <p>Bath: 2–3 weeks. Kitchen: 4–6 weeks. Milestone payments tied to actual progress — with daily jobsite photos so you can see where we're at.</p>
     </div>
     <div class="pillar">
       <div class="pillar-num">03</div>
-      <h3>Real Timelines You Can Plan Around</h3>
-      <p>Bath: 2–3 weeks. Kitchen: 4–6 weeks. Written schedule, milestone payments, and daily jobsite photos so you always know where things stand.</p>
+      <h3>Design + build together</h3>
+      <p>We plan the space, source the materials, and build it. One price. One schedule. Not three quotes to reconcile and a designer who doesn't return calls.</p>
     </div>
   </div>
 </section>
@@ -218,12 +224,9 @@ fbq('track', 'PageView');
   <div class="gallery-inner">
     <h2>Recent kitchens & baths.</h2>
     <div class="gallery-grid">
-            <div class="gallery-item" style="background-image: url('../../images/gallery-1/bath-02.jpg')" data-caption="Master bath — double vanity"></div>
-      <div class="gallery-item" style="background-image: url('../../images/gallery-2/kitchen-finished.jpg')" data-caption="Kitchen — full remodel"></div>
-      <div class="gallery-item" style="background-image: url('../../images/gallery-1/bath-04.jpg')" data-caption="Walk-in shower — frameless glass"></div>
-      <div class="gallery-item" style="background-image: url('../../images/gallery-2/interior-03.jpg')" data-caption="Interior finish work"></div>
-      <div class="gallery-item" style="background-image: url('../../images/gallery-1/bath-07.jpg')" data-caption="Powder bath renovation"></div>
-      <div class="gallery-item" style="background-image: url('../../images/gallery-2/kitchen-install.jpg')" data-caption="Cabinet install phase"></div>
+            <div class="gallery-item" style="background-image: url('https://www.trybloom.ai/img/c17b0683-bc19-4bf7-a0f5-6913fdb20125')" data-caption="Full kitchen remodel — quartz island"></div>
+      <div class="gallery-item" style="background-image: url('https://www.trybloom.ai/img/4171ab5d-a0b9-4c88-972a-401e315c46ac')" data-caption="Master bath — double vanity + walk-in shower"></div>
+      <div class="gallery-item" style="background-image: url('https://www.trybloom.ai/img/ba0e08f8-80ff-454b-88ca-cf6e4ab179ed')" data-caption="Powder bath — custom floating vanity"></div>
     </div>
   </div>
 </section>
@@ -231,34 +234,16 @@ fbq('track', 'PageView');
 <section class="form-section" id="form">
   <div class="form-inner">
     <h2>Get your free kitchen or bath estimate.</h2>
-    <p class="lead">We'll review your space, share a realistic scope and price, and get back to you the same day. No obligation.</p>
+    <p class="lead">Tell us what you're picturing. We'll walk you through what's realistic and what it costs — same day, no pressure.</p>
 
     <form id="leadForm" onsubmit="submitForm(event)" novalidate>
       <div class="form-grid">
-        <div class="form-group">
-          <label for="firstName">First Name</label>
-          <input type="text" id="firstName" name="firstName" required />
-        </div>
-        <div class="form-group">
-          <label for="lastName">Last Name</label>
-          <input type="text" id="lastName" name="lastName" required />
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone" required />
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div class="form-group">
-          <label for="city">City / Area</label>
-          <input type="text" id="city" name="city" placeholder="Spring Hill, Brooksville, New Port Richey..." required />
-        </div>
-        <div class="form-group">
-          <label for="address">Project Address <span class="hint">(optional — speeds up your estimate)</span></label>
-          <input type="text" id="address" name="address" placeholder="123 Main St, City, FL 34609" />
-        </div>
+        <div class="form-group"><label for="firstName">First Name</label><input type="text" id="firstName" name="firstName" required /></div>
+        <div class="form-group"><label for="lastName">Last Name</label><input type="text" id="lastName" name="lastName" required /></div>
+        <div class="form-group"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" required /></div>
+        <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required /></div>
+        <div class="form-group"><label for="city">City / Area</label><input type="text" id="city" name="city" placeholder="Spring Hill, Brooksville, New Port Richey..." required /></div>
+        <div class="form-group"><label for="address">Project Address <span class="hint">(optional — speeds things up)</span></label><input type="text" id="address" name="address" placeholder="123 Main St, City, FL 34609" /></div>
         <div class="form-group full">
           <label for="projectType">Project Type</label>
           <select id="projectType" name="projectType" required>
@@ -271,19 +256,17 @@ fbq('track', 'PageView');
             <option value="Other">Other / Not Sure</option>
           </select>
         </div>
-        <div class="form-submit">
-          <button type="submit" id="submitBtn">Get My Free Estimate →</button>
-        </div>
+        <div class="form-submit"><button type="submit" id="submitBtn">Get My Free Estimate →</button></div>
       </div>
     </form>
 
     <div class="form-success" id="successMsg">
       <h3>Thanks — we've got it.</h3>
-      <p>Michael will be in touch shortly to review your project. If you need us right away, call <a href="tel:9414124901" style="color:var(--white); font-weight:700;">941-412-4901</a>.</p>
+      <p>Michael will be in touch shortly. Need us sooner? Call <a href="tel:9414124901" style="color:var(--white); font-weight:700;">941-412-4901</a>.</p>
     </div>
 
     <p class="form-fine">
-      Or call directly: <a href="tel:9414124901"><strong>941-412-4901</strong></a>. Licensed general contractor — CGC#1533136 · CBC#1266054.
+      Or call directly: <a href="tel:9414124901"><strong>941-412-4901</strong></a> · Licensed general contractor — CGC#1533136 · CBC#1266054
     </p>
   </div>
 </section>
@@ -319,7 +302,7 @@ function submitForm(e) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload)
-  }).catch(function() { /* never block the UX */ });
+  }).catch(function() {});
 
   if (typeof fbq !== 'undefined') fbq('track', 'Lead', {}, { eventID: eventId });
 
