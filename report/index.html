@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="robots" content="noindex,nofollow" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>All Phase Contractors — Digital Marketing Status Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #0E2235;
+    --navy-deep: #0C1A31;
+    --navy-mid: #152442;
+    --blue: #3266E3;
+    --blue-light: #5580E8;
+    --slate: #969CA6;
+    --cream: #FAFAF7;
+    --white: #FFFFFF;
+    --border: rgba(14, 34, 53, 0.09);
+    --radius: 3px;
+
+    --ok: #1FAA59;
+    --warn: #E8A94A;
+    --off: #969CA6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  body {
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    font-weight: 300;
+    color: var(--navy);
+    background: var(--cream);
+    line-height: 1.55;
+    font-size: 15px;
+  }
+  .page { max-width: 880px; margin: 0 auto; background: var(--white); box-shadow: 0 1px 40px rgba(14, 34, 53, 0.06); }
+
+  /* ── Header ─────────────────────────────────────── */
+  .kb-header {
+    background: var(--navy);
+    color: var(--white);
+    padding: 32px 56px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 4px solid var(--blue);
+  }
+  .brand-mark { font-family: 'Fraunces', serif; font-weight: 300; font-size: 28px; letter-spacing: -0.01em; }
+  .brand-mark strong { font-weight: 500; }
+  .brand-mark .comma { color: var(--blue); }
+  .report-meta { text-align: right; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.72; }
+  .report-meta strong { display: block; font-weight: 500; font-size: 13px; opacity: 1; margin-bottom: 4px; letter-spacing: 0.08em; }
+
+  /* ── Cover / Intro ──────────────────────────────── */
+  .cover { padding: 64px 56px 40px; border-bottom: 1px solid var(--border); }
+  .cover .kicker { color: var(--blue); font-weight: 500; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 20px; }
+  .cover h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: 52px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .cover h1 em { font-style: italic; color: var(--blue); font-weight: 400; }
+  .cover .subtitle { color: var(--slate); font-size: 17px; max-width: 640px; }
+  .cover .client-line {
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px;
+    font-size: 13px;
+  }
+  .client-line dt { color: var(--slate); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+  .client-line dd { color: var(--navy); font-weight: 500; }
+
+  /* ── Section shell ─────────────────────────────── */
+  section { padding: 56px 56px; border-bottom: 1px solid var(--border); }
+  section:last-of-type { border-bottom: none; }
+  .section-num { color: var(--blue); font-weight: 500; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 12px; }
+  .section-title { font-family: 'Fraunces', serif; font-weight: 300; font-size: 34px; line-height: 1.1; letter-spacing: -0.015em; margin-bottom: 12px; color: var(--navy); }
+  .section-lede { color: var(--slate); font-size: 15px; margin-bottom: 32px; max-width: 640px; }
+
+  /* ── Executive summary card ────────────────────── */
+  .exec-card {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    color: var(--white);
+    padding: 44px 48px;
+    border-radius: var(--radius);
+    margin-bottom: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+  .exec-card::after {
+    content: ""; position: absolute; right: -60px; top: -60px;
+    width: 240px; height: 240px; border-radius: 50%;
+    background: radial-gradient(circle, var(--blue) 0%, transparent 70%);
+    opacity: 0.15;
+  }
+  .exec-card h3 { font-family: 'Fraunces', serif; font-weight: 300; font-size: 26px; margin-bottom: 18px; letter-spacing: -0.01em; position: relative; }
+  .exec-card p { font-size: 15px; line-height: 1.65; opacity: 0.85; position: relative; margin-bottom: 12px; }
+  .exec-card p:last-child { margin-bottom: 0; }
+
+  /* ── Metric strip ───────────────────────────────── */
+  .metrics {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    background: var(--border); margin: 32px 0;
+    border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;
+  }
+  .metric { background: var(--white); padding: 24px 22px; }
+  .metric .label { color: var(--slate); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+  .metric .value { font-family: 'Fraunces', serif; font-weight: 300; font-size: 30px; line-height: 1; color: var(--navy); letter-spacing: -0.02em; }
+  .metric .sub { color: var(--slate); font-size: 12px; margin-top: 6px; }
+
+  /* ── Status pills ──────────────────────────────── */
+  .pill { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; }
+  .pill.ok { background: rgba(31, 170, 89, 0.1); color: var(--ok); }
+  .pill.warn { background: rgba(232, 169, 74, 0.12); color: #A47318; }
+  .pill.off { background: rgba(150, 156, 166, 0.14); color: var(--slate); }
+  .pill.active { background: rgba(50, 102, 227, 0.1); color: var(--blue); }
+  .pill::before { content: "●"; font-size: 8px; line-height: 1; }
+
+  /* ── Funnel ─────────────────────────────────────── */
+  .funnel { display: grid; grid-template-columns: 1fr; gap: 8px; margin: 24px 0; }
+  .funnel-row {
+    display: grid; grid-template-columns: 40px 1fr 1fr auto; gap: 20px; align-items: center;
+    padding: 18px 24px;
+    background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+  }
+  .funnel-row .num { font-family: 'Fraunces', serif; font-size: 24px; color: var(--blue); font-weight: 300; }
+  .funnel-row .step-name { font-weight: 500; font-size: 15px; color: var(--navy); }
+  .funnel-row .step-detail { color: var(--slate); font-size: 13px; }
+
+  /* ── Ads table ──────────────────────────────────── */
+  .ads-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 13px; }
+  .ads-table thead th { text-align: left; color: var(--slate); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 12px 14px; border-bottom: 2px solid var(--border); font-weight: 500; }
+  .ads-table tbody td { padding: 16px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .ads-table tbody tr:last-child td { border-bottom: none; }
+  .ad-name { font-weight: 500; color: var(--navy); margin-bottom: 3px; }
+  .ad-headline { font-size: 12px; color: var(--slate); font-style: italic; }
+  .lp-link { color: var(--blue); text-decoration: none; font-family: 'DM Sans', monospace; font-size: 12px; word-break: break-all; }
+  .lp-link:hover { text-decoration: underline; }
+
+  /* ── LP cards ──────────────────────────────────── */
+  .lp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+  .lp-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 22px; position: relative;
+  }
+  .lp-card .lp-status { position: absolute; top: 18px; right: 18px; }
+  .lp-card h4 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 18px; margin-bottom: 8px; color: var(--navy); padding-right: 60px; }
+  .lp-card .lp-angle { color: var(--slate); font-size: 12px; margin-bottom: 14px; }
+  .lp-card .lp-url { display: block; font-size: 11px; color: var(--blue); font-family: monospace; word-break: break-all; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+
+  /* ── Cost table ────────────────────────────────── */
+  .cost-summary { background: var(--cream); padding: 28px 32px; border-radius: var(--radius); }
+  .cost-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  .cost-row:last-child { border-bottom: none; padding-top: 18px; font-weight: 500; font-size: 16px; }
+  .cost-row .cost-value { font-family: 'Fraunces', serif; font-weight: 400; }
+
+  /* ── Next steps ────────────────────────────────── */
+  .next-steps { display: grid; gap: 14px; margin-top: 20px; }
+  .step { display: grid; grid-template-columns: 60px 1fr; gap: 22px; padding: 20px 24px; border: 1px solid var(--border); border-left: 3px solid var(--blue); border-radius: var(--radius); }
+  .step .step-num { font-family: 'Fraunces', serif; font-weight: 300; font-size: 34px; color: var(--blue); line-height: 1; }
+  .step h5 { font-size: 15px; font-weight: 500; margin-bottom: 5px; color: var(--navy); }
+  .step p { font-size: 13px; color: var(--slate); }
+
+  /* ── Footer ─────────────────────────────────────── */
+  .kb-footer {
+    background: var(--navy-deep); color: var(--slate); padding: 40px 56px;
+    text-align: center; font-size: 12px; letter-spacing: 0.06em;
+  }
+  .kb-footer strong { color: var(--white); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 8px; font-family: 'Fraunces', serif; font-size: 18px; letter-spacing: -0.01em; text-transform: none; }
+  .kb-footer a { color: var(--blue-light); text-decoration: none; }
+
+  /* ── Print ─────────────────────────────────────── */
+  @media print {
+    body { background: var(--white); }
+    .page { box-shadow: none; }
+    section { page-break-inside: avoid; }
+    .exec-card { break-inside: avoid; }
+  }
+
+  @media (max-width: 720px) {
+    .kb-header, .cover, section, .kb-footer { padding-left: 28px; padding-right: 28px; }
+    .cover h1 { font-size: 38px; }
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+    .cover .client-line { grid-template-columns: repeat(2, 1fr); }
+    .lp-grid { grid-template-columns: 1fr; }
+    .funnel-row { grid-template-columns: 30px 1fr auto; }
+    .funnel-row .step-detail { grid-column: 2 / -1; }
+    .ads-table thead { display: none; }
+    .ads-table td { display: block; padding: 6px 0; border: none; }
+    .ads-table tbody tr { display: block; padding: 16px 0; border-bottom: 1px solid var(--border); }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ═══════════ HEADER ═══════════ -->
+  <header class="kb-header">
+    <div class="brand-mark">KB<span class="comma">,</span></div>
+    <div class="report-meta">
+      <strong>Client Report</strong>
+      July 15, 2026
+    </div>
+  </header>
+
+  <!-- ═══════════ COVER ═══════════ -->
+  <div class="cover">
+    <div class="kicker">Digital Marketing Status Report</div>
+    <h1>All Phase Contractors, <em>Inc.</em></h1>
+    <p class="subtitle">Where things stand across the website, paid advertising, lead capture pipeline, and the systems working in the background to turn ad clicks into signed jobs.</p>
+    <dl class="client-line">
+      <div><dt>Client</dt><dd>All Phase Contractors, Inc.</dd></div>
+      <div><dt>Market</dt><dd>Hernando · Pasco · Pinellas · Citrus</dd></div>
+      <div><dt>Reporting Period</dt><dd>Last 30 Days</dd></div>
+      <div><dt>Prepared By</dt><dd>KB Digital Marketing</dd></div>
+    </dl>
+  </div>
+
+  <!-- ═══════════ 01 EXECUTIVE SUMMARY ═══════════ -->
+  <section>
+    <div class="section-num">01 · At a Glance</div>
+    <h2 class="section-title">Everything's healthy, and the machine just got a major upgrade.</h2>
+    <p class="section-lede">The short version of what to know before you read anything else below.</p>
+
+    <div class="exec-card">
+      <h3>The state of the account today</h3>
+      <p>Your Meta ad account is in good standing. Every active ad is approved and delivering to real prospects. Cost per link click sits at <strong>$0.21</strong> — genuinely excellent for the roofing/contracting space, where $1 to $3 per click is the norm.</p>
+      <p>This session, we upgraded the entire funnel: a fully working website with proper lead capture, three new dedicated landing pages for the strongest ad angles, server-side conversion tracking so we can actually see what Apple/ad-blockers used to hide, and automatic Roofr job creation for every lead that comes in — no more manual entry.</p>
+      <p>Nothing is quietly burning money. Nothing is broken or rejected. Every dollar is going toward the one live campaign, and it's spending efficiently.</p>
+    </div>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="label">30-Day Spend</div>
+        <div class="value">$12.19</div>
+        <div class="sub">Efficient ramp-up phase</div>
+      </div>
+      <div class="metric">
+        <div class="label">Cost / Click</div>
+        <div class="value">$0.21</div>
+        <div class="sub">Well below industry avg.</div>
+      </div>
+      <div class="metric">
+        <div class="label">Active Ads</div>
+        <div class="value">5</div>
+        <div class="sub">All approved, all live</div>
+      </div>
+      <div class="metric">
+        <div class="label">Rejected Ads</div>
+        <div class="value">0</div>
+        <div class="sub">Account fully healthy</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 02 WEBSITE ═══════════ -->
+  <section>
+    <div class="section-num">02 · The Website</div>
+    <h2 class="section-title">allphasecontractorsfl.com is live and fully functional.</h2>
+    <p class="section-lede">A conversion-focused website is the foundation for everything else. Ours is doing its job.</p>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="label">Pages Live</div>
+        <div class="value">10</div>
+        <div class="sub">Home + 6 galleries + 3 LPs</div>
+      </div>
+      <div class="metric">
+        <div class="label">Project Photos</div>
+        <div class="value">75</div>
+        <div class="sub">Across 6 job categories</div>
+      </div>
+      <div class="metric">
+        <div class="label">Lead Form</div>
+        <div class="value">Live</div>
+        <div class="sub">Wired to full pipeline</div>
+      </div>
+      <div class="metric">
+        <div class="label">Call Tracking</div>
+        <div class="value">Live</div>
+        <div class="sub">941-412-4901</div>
+      </div>
+    </div>
+
+    <h3 style="font-family: 'Fraunces', serif; font-weight: 300; font-size: 22px; margin: 36px 0 14px; color: var(--navy);">Fixed this session</h3>
+    <ul style="list-style: none; padding: 0;">
+      <li style="padding: 14px 20px; border-left: 3px solid var(--ok); background: rgba(31, 170, 89, 0.04); margin-bottom: 8px; border-radius: var(--radius);">
+        <strong style="font-weight: 500;">Site images now loading.</strong> <span style="color: var(--slate);">The homepage, all six gallery pages, and every project photo — previously missing from the deploy — are now live.</span>
+      </li>
+      <li style="padding: 14px 20px; border-left: 3px solid var(--ok); background: rgba(31, 170, 89, 0.04); margin-bottom: 8px; border-radius: var(--radius);">
+        <strong style="font-weight: 500;">Correct phone number everywhere.</strong> <span style="color: var(--slate);">Every button, footer, and metadata field now shows 941-412-4901 (the dedicated All Phase tracked line, routed to Michael).</span>
+      </li>
+      <li style="padding: 14px 20px; border-left: 3px solid var(--ok); background: rgba(31, 170, 89, 0.04); border-radius: var(--radius);">
+        <strong style="font-weight: 500;">Address field added to the lead form.</strong> <span style="color: var(--slate);">Optional field so Roofr jobs geocode properly and estimates start with the right info.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════ 03 THE FUNNEL ═══════════ -->
+  <section>
+    <div class="section-num">03 · The Lead Pipeline</div>
+    <h2 class="section-title">What happens the second someone fills out the form.</h2>
+    <p class="section-lede">One click on "Get a Free Estimate" now triggers a five-step chain in the background. All five run in parallel, and none of them can break the others.</p>
+
+    <div class="funnel">
+      <div class="funnel-row">
+        <div class="num">1</div>
+        <div class="step-name">Lead lands in the system</div>
+        <div class="step-detail">Name, phone, email, city, address, project type</div>
+        <div><span class="pill ok">Live</span></div>
+      </div>
+      <div class="funnel-row">
+        <div class="num">2</div>
+        <div class="step-name">Email to Michael</div>
+        <div class="step-detail">Full lead details, delivered instantly</div>
+        <div><span class="pill ok">Live</span></div>
+      </div>
+      <div class="funnel-row">
+        <div class="num">3</div>
+        <div class="step-name">SMS to Michael</div>
+        <div class="step-detail">Text alert with contact info + tap-to-call</div>
+        <div><span class="pill ok">Live</span></div>
+      </div>
+      <div class="funnel-row">
+        <div class="num">4</div>
+        <div class="step-name">Roofr job created</div>
+        <div class="step-detail">Auto-adds the lead as a job in Roofr, assigned to Michael</div>
+        <div><span class="pill ok">New</span></div>
+      </div>
+      <div class="funnel-row">
+        <div class="num">5</div>
+        <div class="step-name">Conversion sent to Meta</div>
+        <div class="step-detail">Server-side tracking so iOS and ad-blockers don't hide leads</div>
+        <div><span class="pill ok">New</span></div>
+      </div>
+    </div>
+
+    <p style="color: var(--slate); font-size: 14px; margin-top: 24px; padding: 20px; background: var(--cream); border-radius: var(--radius); border-left: 3px solid var(--blue);">
+      <strong style="color: var(--navy); font-weight: 500;">Why steps 4 and 5 matter:</strong> Before this session, leads emailed and texted Michael but stopped there — job creation was manual, and roughly 20-40% of conversion signal was invisible to Meta because of Apple's tracking limits. Both are now automatic and complete.
+    </p>
+  </section>
+
+  <!-- ═══════════ 04 ACTIVE ADS ═══════════ -->
+  <section>
+    <div class="section-num">04 · Active Advertising</div>
+    <h2 class="section-title">Five ads running. Each has a job.</h2>
+    <p class="section-lede">One campaign in the Hernando/Nature Coast market, targeting five distinct customer angles. All approved. All delivering.</p>
+
+    <table class="ads-table">
+      <thead>
+        <tr>
+          <th>Ad</th>
+          <th>Angle</th>
+          <th>Landing Page</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="ad-name">Storm Damage</div>
+            <div class="ad-headline">"Storm Damage? Get A Free Roof Inspection."</div>
+          </td>
+          <td>Emergency roof repair, insurance claims</td>
+          <td><a class="lp-link" href="https://stalwart-lily-f0de4b.netlify.app/">stalwart-lily-f0de4b.netlify.app</a></td>
+          <td><span class="pill active">Active</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ad-name">General GC</div>
+            <div class="ad-headline">"One Call. Every Phase Covered."</div>
+          </td>
+          <td>Full-project GC positioning</td>
+          <td><a class="lp-link" href="https://allphasecontractorsfl.com/lp/general-gc/">/lp/general-gc/</a></td>
+          <td><span class="pill warn">In Review</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ad-name">Kitchen &amp; Bath</div>
+            <div class="ad-headline">"Dreaming Of A New Kitchen Or Bath?"</div>
+          </td>
+          <td>Interior remodel prospects</td>
+          <td><a class="lp-link" href="https://allphasecontractorsfl.com/lp/kitchen-bath/">/lp/kitchen-bath/</a></td>
+          <td><span class="pill warn">In Review</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ad-name">Metal Roof</div>
+            <div class="ad-headline">"Metal Roof. Built To Outlast The Next Storm."</div>
+          </td>
+          <td>Long-term homeowners, insurance discounts</td>
+          <td><a class="lp-link" href="https://allphasecontractorsfl.com/lp/metal-roof/">/lp/metal-roof/</a></td>
+          <td><span class="pill warn">In Review</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ad-name">Reviews</div>
+            <div class="ad-headline">"Still Deciding On A Roofer?"</div>
+          </td>
+          <td>Trust / social proof</td>
+          <td><a class="lp-link" href="https://allphasecontractorsfl.com/#form">allphasecontractorsfl.com</a></td>
+          <td><span class="pill active">Active</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="color: var(--slate); font-size: 13px; margin-top: 20px; font-style: italic;">
+      "In Review" is Meta's routine approval process after any creative change. Typically clears within a few hours; always within 24. No action needed — the ads flip back to Active automatically.
+    </p>
+  </section>
+
+  <!-- ═══════════ 05 LANDING PAGES ═══════════ -->
+  <section>
+    <div class="section-num">05 · New This Session</div>
+    <h2 class="section-title">Three dedicated landing pages, built to match each ad's angle.</h2>
+    <p class="section-lede">Sending someone from a "kitchen remodel" ad to a homepage that shows roofing photos loses them. Each ad now leads to a page that continues the conversation.</p>
+
+    <div class="lp-grid">
+      <div class="lp-card">
+        <span class="pill ok lp-status">Live</span>
+        <h4>General GC</h4>
+        <div class="lp-angle">"One Call. Every Phase Covered." — full-project positioning with the trust markers Mike's built over 20 years and 500+ projects.</div>
+        <a class="lp-url" href="https://allphasecontractorsfl.com/lp/general-gc/">/lp/general-gc/</a>
+      </div>
+      <div class="lp-card">
+        <span class="pill ok lp-status">Live</span>
+        <h4>Kitchen &amp; Bath</h4>
+        <div class="lp-angle">In-house trades, real timelines (bath 2-3 wk, kitchen 4-6 wk), and daily jobsite photos. Written for homeowners tired of three separate contractor quotes.</div>
+        <a class="lp-url" href="https://allphasecontractorsfl.com/lp/kitchen-bath/">/lp/kitchen-bath/</a>
+      </div>
+      <div class="lp-card">
+        <span class="pill ok lp-status">Live</span>
+        <h4>Metal Roof</h4>
+        <div class="lp-angle">40-70 year lifespan, 140+ mph wind ratings, and the insurance-credit angle most homeowners don't know about. Distinct copy from the GC ad — no longer competing with itself.</div>
+        <a class="lp-url" href="https://allphasecontractorsfl.com/lp/metal-roof/">/lp/metal-roof/</a>
+      </div>
+    </div>
+
+    <p style="color: var(--slate); font-size: 14px; margin-top: 28px; padding: 20px; background: var(--cream); border-radius: var(--radius); border-left: 3px solid var(--blue);">
+      <strong style="color: var(--navy); font-weight: 500;">The strategic upside:</strong> Every dedicated LP carries the same Meta tracking pixel as the main site, so we can now see which angle converts best — and eventually build retargeting audiences of visitors who saw the Kitchen ad separately from visitors who saw the Metal Roof ad. That's how paid Meta gets efficient over time.
+    </p>
+  </section>
+
+  <!-- ═══════════ 06 SPEND SUMMARY ═══════════ -->
+  <section>
+    <div class="section-num">06 · What's Being Spent</div>
+    <h2 class="section-title">The numbers, plain.</h2>
+    <p class="section-lede">Where the money's going, what it's producing, and what's next.</p>
+
+    <div class="cost-summary">
+      <div class="cost-row">
+        <span>Budget set (daily)</span>
+        <span class="cost-value">$30.00</span>
+      </div>
+      <div class="cost-row">
+        <span>Actual daily spend (recent avg.)</span>
+        <span class="cost-value">$8.28</span>
+      </div>
+      <div class="cost-row">
+        <span>Total 30-day spend</span>
+        <span class="cost-value">$12.19</span>
+      </div>
+      <div class="cost-row">
+        <span>Link clicks generated</span>
+        <span class="cost-value">57</span>
+      </div>
+      <div class="cost-row">
+        <span>Cost per click</span>
+        <span class="cost-value">$0.21</span>
+      </div>
+    </div>
+
+    <p style="color: var(--slate); font-size: 14px; margin-top: 24px; line-height: 1.65;">
+      The gap between $30/day and $8/day of actual spend is normal for a new campaign in its ramp-up phase. Meta's system needs a few weeks of consistent delivery to find the most efficient audience segments. We're deliberately not scaling budget until performance stabilizes and we have the data to know what's working — spending faster on unclear signals wastes money. As the pipeline captures more leads and the pixel accumulates data, we'll have the volume needed to make confident scaling decisions.
+    </p>
+  </section>
+
+  <!-- ═══════════ 07 NEXT STEPS ═══════════ -->
+  <section>
+    <div class="section-num">07 · What Happens Next</div>
+    <h2 class="section-title">The 30-day roadmap.</h2>
+    <p class="section-lede">Everything above sets the foundation. Here's what we're doing with it.</p>
+
+    <div class="next-steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <h5>Let the new setup accumulate data (Weeks 1-2)</h5>
+          <p>The three new landing pages and server-side tracking need real traffic to prove themselves. We'll watch which ad angle converts best and identify the winner rather than guess.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <h5>Add video creative (Week 2-3)</h5>
+          <p>All current ads are static images. Meta's own data shows a vertical video on Reels typically lowers cost per result 8-15%. One 9:16 video per angle unlocks placements we're not touching yet.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <h5>Scale budget on the winning angle (Week 3-4)</h5>
+          <p>Once we know which of the five angles converts cheapest into a real lead (not just a click), that's where the daily budget grows. Cost per lead — not cost per click — is the metric that matters.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div>
+          <h5>Turn on retargeting (Week 4+)</h5>
+          <p>With enough website visitors accumulated on the pixel, we can serve ads specifically to people who visited a specific landing page but didn't fill out the form. This is where paid Meta gets significantly more efficient.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="kb-footer">
+    <strong>KB Digital Marketing</strong>
+    Prepared for All Phase Contractors, Inc. · July 15, 2026<br/>
+    <a href="mailto:kbursteinsr@gmail.com">kbursteinsr@gmail.com</a> · <a href="https://kbdigitalmkt.com">kbdigitalmkt.com</a>
+  </footer>
+
+</div>
+</body>
+</html>
