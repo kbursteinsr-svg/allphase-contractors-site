@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bathroom Renovation — Clearwater, FL | All Phase Contractors, Inc.</title>
+  <meta name="description" content="Project photos: Bathroom Renovation in Clearwater, FL. Licensed general contractor — All Phase Contractors, Inc. CGC#1533136 · CBC#1266054. Call 941-882-9491." />
+  <link rel="canonical" href="https://allphasecontractors.com/gallery-bathroom-clearwater.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'ALLPHASE_PIXEL_ID');
+    fbq('track', 'PageView');
+  </script>
+
+  <style>
+    :root {
+      --navy:      #0f183c;
+      --red:       #bd1919;
+      --white:     #ffffff;
+      --offwhite:  #f6f5f2;
+      --nearblack: #090d1e;
+      --body-dark: #b8bdcc;
+      --body-light:#444;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--nearblack); color: var(--white); }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px;
+      height: 68px;
+      background: var(--navy);
+      border-bottom: 2px solid var(--red);
+    }
+    .nav-brand { display: flex; flex-direction: column; }
+    .nav-name { font-size: 13px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--white); }
+    .nav-lic { font-size: 10px; color: rgba(255,255,255,0.4); letter-spacing: 0.4px; margin-top: 2px; }
+    .nav-right { display: flex; align-items: center; gap: 32px; }
+    .nav-back {
+      font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      display: flex; align-items: center; gap: 6px;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--white); }
+    .nav-back svg { transition: transform 0.2s; }
+    .nav-back:hover svg { transform: translateX(-3px); }
+    .nav-cta {
+      display: inline-flex; align-items: center;
+      padding: 10px 22px;
+      background: var(--red); color: var(--white);
+      font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: #a01515; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      height: 56vh; min-height: 380px; max-height: 600px;
+      background: var(--navy);
+      overflow: hidden;
+    }
+    .hero-img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      opacity: 0.55;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(9,13,30,0.92) 0%, rgba(9,13,30,0.2) 60%);
+      display: flex; flex-direction: column;
+      justify-content: flex-end;
+      padding: 48px 60px;
+    }
+    .hero-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--red);
+      margin-bottom: 10px;
+    }
+    .hero-title {
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 800; letter-spacing: -0.5px;
+      color: var(--white); line-height: 1.1;
+    }
+    .hero-location {
+      font-size: 14px; color: rgba(255,255,255,0.5);
+      margin-top: 10px; letter-spacing: 0.5px;
+    }
+    .hero-scope {
+      margin-top: 6px;
+      font-size: 13px; color: rgba(255,255,255,0.35);
+    }
+
+    /* ── GALLERY SECTION ── */
+    .gallery-section {
+      padding: 72px 60px 100px;
+      max-width: 1440px; margin: 0 auto;
+    }
+    .gallery-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: rgba(255,255,255,0.25);
+      margin-bottom: 36px;
+    }
+
+    /* Masonry-style grid */
+    .gallery-grid {
+      columns: 3;
+      column-gap: 6px;
+    }
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 6px;
+      position: relative;
+      overflow: hidden;
+      cursor: zoom-in;
+      background: rgba(255,255,255,0.04);
+    }
+    .gallery-item img {
+      width: 100%; height: auto;
+      display: block;
+      transition: transform 0.5s ease, opacity 0.3s ease;
+      opacity: 0;
+    }
+    .gallery-item img.loaded { opacity: 1; }
+    .gallery-item:hover img { transform: scale(1.04); }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,0.94);
+      align-items: center; justify-content: center;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox-img {
+      max-width: 92vw; max-height: 90vh;
+      object-fit: contain;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .lightbox-close {
+      position: fixed; top: 24px; right: 32px;
+      font-size: 28px; color: rgba(255,255,255,0.6);
+      cursor: pointer; transition: color 0.2s;
+      background: none; border: none; line-height: 1;
+    }
+    .lightbox-close:hover { color: #fff; }
+    .lightbox-prev, .lightbox-next {
+      position: fixed; top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,0.08); border: none; color: #fff;
+      font-size: 20px; padding: 18px 16px; cursor: pointer;
+      transition: background 0.2s;
+    }
+    .lightbox-prev { left: 0; }
+    .lightbox-next { right: 0; }
+    .lightbox-prev:hover, .lightbox-next:hover { background: rgba(255,255,255,0.18); }
+    .lightbox-counter {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+      font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 1px;
+    }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      background: var(--navy);
+      border-top: 3px solid var(--red);
+      padding: 72px 60px;
+      text-align: center;
+    }
+    .cta-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: rgba(255,255,255,0.3);
+      margin-bottom: 16px;
+    }
+    .cta-h2 {
+      font-size: clamp(24px, 3vw, 40px);
+      font-weight: 800; color: var(--white);
+      margin-bottom: 32px; letter-spacing: -0.3px;
+    }
+    .cta-btn {
+      display: inline-block;
+      padding: 16px 40px;
+      background: var(--red); color: var(--white);
+      font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    .cta-btn:hover { background: #a01515; }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--nearblack);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 32px 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-brand { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    .footer-lic { font-size: 10px; color: rgba(255,255,255,0.3); margin-top: 4px; }
+    .footer-right { font-size: 11px; color: rgba(255,255,255,0.3); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .nav { padding: 0 24px; }
+      .hero-overlay { padding: 32px 24px; }
+      .gallery-section { padding: 48px 24px 72px; }
+      .gallery-grid { columns: 2; }
+      .cta-banner { padding: 56px 24px; }
+      .footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
+    }
+    @media (max-width: 540px) {
+      .gallery-grid { columns: 1; }
+      .nav-right .nav-back { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-brand">
+      <div class="nav-name">All Phase Contractors, Inc.</div>
+      <div class="nav-lic">CGC#1533136 · CBC#1266054</div>
+    </div>
+    <div class="nav-right">
+      <a href="./index.html#work" class="nav-back">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to Portfolio
+      </a>
+      <a href="tel:9418829491" class="nav-cta">941-882-9491</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img class="hero-img" src="./images/work-1.jpg" alt="Bathroom Renovation — Clearwater, FL" />
+    <div class="hero-overlay">
+      <div class="hero-eyebrow">Project Gallery</div>
+      <h1 class="hero-title">Bathroom Renovation</h1>
+      <div class="hero-location">Clearwater, FL</div>
+      <div class="hero-scope">Full bathroom gut and remodel — custom tile, black fixtures, built-in niche</div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <div class="gallery-section">
+    <div class="gallery-eyebrow">Project Photos</div>
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Images injected by JS -->
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lbClose">&times;</button>
+    <button class="lightbox-prev" id="lbPrev">&#8592;</button>
+    <img class="lightbox-img" id="lbImg" src="" alt="" />
+    <button class="lightbox-next" id="lbNext">&#8594;</button>
+    <div class="lightbox-counter" id="lbCounter"></div>
+  </div>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <div class="cta-eyebrow">Ready to Build?</div>
+    <h2 class="cta-h2">Get a free, itemized estimate.</h2>
+    <a href="./index.html#contact" class="cta-btn">Request a Free Estimate</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div>
+      <div class="footer-brand">All Phase Contractors, Inc.</div>
+      <div class="footer-lic">CGC#1533136 · CBC#1266054 · 5020 Clark Rd, #511, Sarasota FL 34233</div>
+    </div>
+    <div class="footer-right">© 2025 All Phase Contractors, Inc. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // ── IMAGE MANIFEST ──────────────────────────────────
+    // Add new image paths here when more photos are uploaded.
+    // Format: { src: './images/gallery-1/filename.jpg', alt: 'Description' }
+    const IMAGES = [
+      { src: './images/work-1.jpg', alt: 'Bathroom shower — black fixtures, penny tile floor' },
+      { src: './images/gallery-1/bath-vanity-shower.jpg', alt: 'Double vanity with LED mirror and frameless glass shower' },
+      { src: './images/gallery-1/bath-06.jpg', alt: 'Blue glass mosaic tile shower with tub — full bathroom' },
+      { src: './images/gallery-1/bath-07.jpg', alt: 'Subway tile shower with hex mosaic floor and curb' },
+      { src: './images/gallery-1/bath-08.jpg', alt: 'Subway tile bathroom with frosted window' },
+      { src: './images/gallery-1/bath-09.jpg', alt: 'Subway tile bathroom detail — window and niche' },
+    ];
+
+    // ── RENDER GRID ─────────────────────────────────────
+    const grid = document.getElementById('galleryGrid');
+    IMAGES.forEach((img, i) => {
+      const div = document.createElement('div');
+      div.className = 'gallery-item';
+      div.dataset.index = i;
+      const el = document.createElement('img');
+      el.src = img.src;
+      el.alt = img.alt;
+      el.onload = () => el.classList.add('loaded');
+      div.appendChild(el);
+      div.addEventListener('click', () => openLightbox(i));
+      grid.appendChild(div);
+    });
+
+    // ── LIGHTBOX ─────────────────────────────────────────
+    let current = 0;
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbCounter = document.getElementById('lbCounter');
+
+    function openLightbox(idx) {
+      current = idx;
+      lbImg.src = IMAGES[idx].src;
+      lbImg.alt = IMAGES[idx].alt;
+      lbCounter.textContent = (idx + 1) + ' / ' + IMAGES.length;
+      lb.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      lb.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    function navigate(dir) {
+      current = (current + dir + IMAGES.length) % IMAGES.length;
+      lbImg.src = IMAGES[current].src;
+      lbImg.alt = IMAGES[current].alt;
+      lbCounter.textContent = (current + 1) + ' / ' + IMAGES.length;
+    }
+
+    document.getElementById('lbClose').addEventListener('click', closeLightbox);
+    document.getElementById('lbPrev').addEventListener('click', () => navigate(-1));
+    document.getElementById('lbNext').addEventListener('click', () => navigate(1));
+    lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
+    document.addEventListener('keydown', (e) => {
+      if (!lb.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navigate(-1);
+      if (e.key === 'ArrowRight') navigate(1);
+    });
+  </script>
+
+</body>
+</html>
