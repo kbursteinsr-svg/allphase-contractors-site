@@ -310,6 +310,21 @@ function submitForm(e) {
   form.style.display = 'none';
   document.getElementById('successMsg').style.display = 'block';
 }
+
+// Tap-to-call tracking — fires a Meta 'Contact' event whenever anyone taps a phone link.
+// Lets Meta optimize for call-taps as a conversion, alongside form fills.
+document.addEventListener('click', function(e) {
+  var t = e.target.closest && e.target.closest('a[href^="tel:"]');
+  if (t && typeof fbq !== 'undefined') {
+    var eventId = 'call-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8);
+    fbq('track', 'Contact', {
+      content_name: 'Phone Call Tap',
+      content_category: document.title,
+      source: window.location.pathname
+    }, { eventID: eventId });
+  }
+}, true);
+
 </script>
 
 </body>
