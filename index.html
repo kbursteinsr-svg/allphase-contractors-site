@@ -482,10 +482,26 @@
       position: absolute;
       inset: 0;
       background-color: var(--navy);
-      background-image: url('/images/hero-bg.jpg');
+      background-image: url('/images/hero-metal-roof.jpg');
       background-size: cover;
       background-position: center;
     }
+    /* Hero crossfade - metal roof base, kitchen overlay */
+    .hero-photo-alt {
+      background-image: url('/images/hero-bg.jpg');
+      opacity: 0;
+      animation: heroCrossfade 16s ease-in-out infinite;
+      will-change: opacity;
+    }
+    @keyframes heroCrossfade {
+      0%, 44%  { opacity: 0; }
+      50%, 94% { opacity: 1; }
+      100%     { opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-photo-alt { animation: none; opacity: 0; }
+    }
+
     /* Gradient overlay */
     .hero-overlay {
       position: absolute;
@@ -1484,6 +1500,7 @@
 <!-- PHOTO: hero-bg.jpg — a wide completed project (kitchen, addition, or exterior) -->
 <section id="hero" aria-label="Hero">
   <div class="hero-photo-bg"></div>
+  <div class="hero-photo-bg hero-photo-alt" aria-hidden="true"></div>
   <div class="hero-overlay"></div>
   <div class="hero-inner">
     <div class="hero-eyebrow">Licensed General Contractor</div>
