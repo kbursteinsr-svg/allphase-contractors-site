@@ -1251,7 +1251,16 @@
     @media (max-width: 1100px) {
       .mobile-call-bar { display: block; }
     }
-  </style>
+  
+  .form-group input.is-invalid, .form-group select.is-invalid { border-color: #c8391b; background: #fff4f1; }
+  .field-error { color: #c8391b; font-size: 12px; font-weight: 600; margin-top: 7px; }
+  .submit-error {
+    grid-column: 1 / -1; margin-top: 14px; padding: 14px 16px;
+    background: #fff4f1; border-left: 3px solid #c8391b;
+    color: #8f2410; font-size: 13px; line-height: 1.6;
+  }
+  .submit-error a { color: #0f1a2e; font-weight: 700; }
+</style>
 </head>
 <body>
 
@@ -1393,32 +1402,32 @@
       <p class="work-sub">Projects across Pinellas, Pasco, Hernando, and Citrus Counties — remodels, additions, concrete, and new builds.</p>
     </div>
     <div class="work-grid">
-      <a href="/gallery-bathroom-clearwater.html" class="work-photo p1">
+      <a class='work-photo p1' href='/gallery-bathroom-clearwater'>
         <img src="/images/work-1.jpg" alt="Bathroom Renovation — Clearwater, FL" loading="lazy" />
         <div class="gallery-overlay"><span class="gallery-overlay-label">View Gallery</span></div>
         <div class="work-caption">Bathroom Renovation — Clearwater, FL</div>
       </a>
-      <a href="/gallery-waterfront-estate.html" class="work-photo p2">
+      <a class='work-photo p2' href='/gallery-waterfront-estate'>
         <img src="/images/work-2.jpg" alt="Waterfront Estate — Pinellas County, FL" loading="lazy" />
         <div class="gallery-overlay"><span class="gallery-overlay-label">View Gallery</span></div>
         <div class="work-caption">Waterfront Estate — Pinellas County, FL</div>
       </a>
-      <a href="/gallery-new-construction-springhill.html" class="work-photo p3">
+      <a class='work-photo p3' href='/gallery-new-construction-springhill'>
         <img src="/images/work-3.jpg" alt="New Construction — Spring Hill, FL" loading="lazy" />
         <div class="gallery-overlay"><span class="gallery-overlay-label">View Gallery</span></div>
         <div class="work-caption">New Construction — Spring Hill, FL</div>
       </a>
-      <a href="/gallery-outdoor-structures.html" class="work-photo p4">
+      <a class='work-photo p4' href='/gallery-outdoor-structures'>
         <img src="/images/work-4.jpg" alt="Outdoor Structures — Spring Hill, FL" loading="lazy" />
         <div class="gallery-overlay"><span class="gallery-overlay-label">View Gallery</span></div>
         <div class="work-caption">Outdoor Structures — Spring Hill, FL</div>
       </a>
-      <a href="/gallery-roofing-hernando.html" class="work-photo p5">
+      <a class='work-photo p5' href='/gallery-roofing-hernando'>
         <img src="/images/work-5.jpg" alt="Roofing — Hernando County, FL" loading="lazy" />
         <div class="gallery-overlay"><span class="gallery-overlay-label">View Gallery</span></div>
         <div class="work-caption">Roofing — Hernando County, FL</div>
       </a>
-      <a href="/gallery-new-construction-trinity.html" class="work-photo p6">
+      <a class='work-photo p6' href='/gallery-new-construction-trinity'>
         <img src="/images/work-6.jpg" alt="New Construction — Trinity, FL" loading="lazy" />
         <div class="gallery-overlay"><span class="gallery-overlay-label">View Gallery</span></div>
         <div class="work-caption">New Construction — Trinity, FL</div>
@@ -1611,7 +1620,7 @@
       <div class="form-right-title">Request Your Free Estimate</div>
       <div class="form-right-sub">We respond within one business day.</div>
       <div id="formSuccess" class="form-success">✓ Request received! Michael will follow up within one business day.</div>
-      <form id="leadForm" onsubmit="submitForm(event)" novalidate>
+      <form id="leadForm" onsubmit="return submitForm(event)">
         <div class="form-row">
           <div class="form-group">
             <label for="firstName">First Name</label>
@@ -1700,48 +1709,9 @@
     document.getElementById('mobileMenu').style.display = 'none';
   }
 
-  async function submitForm(e) {
-    e.preventDefault();
-    const form = e.target;
-    const btn = form.querySelector('button[type="submit"]');
-    btn.textContent = 'Submitting...';
-    btn.disabled = true;
-    // Shared event ID so the browser Pixel and the server-side CAPI event
-    // deduplicate as one Lead in Meta (both must send this same value).
-    const eventId = 'lead-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
-    const payload = {
-      firstName:   form.firstName.value,
-      lastName:    form.lastName.value,
-      phone:       form.phone.value,
-      email:       form.email.value,
-      city:        form.city.value,
-      address:     form.address.value,
-      projectType: form.projectType.value,
-      source:      'allphase-website',
-      eventId:     eventId,
-      eventSourceUrl: window.location.href,
-      submittedAt: new Date().toISOString()
-    };
-    try {
-      await fetch('https://kbdigitalmkt.app.n8n.cloud/webhook/allphase-lead-intake', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-    } catch (_) {}
-    if (typeof fbq !== 'undefined') fbq('track', 'Lead', {}, { eventID: eventId });
-    document.getElementById('formSuccess').style.display = 'block';
-    form.style.display = 'none';
-  }
 </script>
-<script>
-// Meta Pixel — Phone click tracking
-document.querySelectorAll('a[href^="tel:"]').forEach(function(el){
-  el.addEventListener('click', function(){
-    if (typeof fbq !== 'undefined') fbq('track', 'Contact', { content_name: 'Phone Call Click' });
-  });
-});
-</script>
+<script>window.LEAD_SOURCE = 'allphase-website';</script>
+<script src="/lp/form-validation.js"></script>
 
 
 <!-- SEO location signals -->
