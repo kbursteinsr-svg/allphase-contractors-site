@@ -113,27 +113,137 @@
     .btn.ghost{margin-left:0;margin-top:10px}
   }
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+
+    /* ── global nav: dropdowns + quote button ── */
+    .nav-links { position: relative; }
+    .nav-links > li { position: relative; }
+    .nav-links .caret {
+      display: inline-block; width: 0; height: 0; margin-left: 5px;
+      vertical-align: middle;
+      border-left: 3.5px solid transparent; border-right: 3.5px solid transparent;
+      border-top: 4px solid currentColor; opacity: 0.7;
+    }
+    .nav-links .drop {
+      position: absolute; top: 100%; left: -14px;
+      min-width: 208px; padding: 8px 0; margin: 0;
+      list-style: none;
+      background: #0b1526;
+      border: 1px solid rgba(255,255,255,0.10);
+      border-top: 2px solid var(--red, #c8391b);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.42);
+      opacity: 0; visibility: hidden; transform: translateY(-6px);
+      transition: opacity .16s ease, transform .16s ease, visibility .16s;
+      z-index: 200;
+    }
+    .nav-links .has-drop:hover > .drop,
+    .nav-links .has-drop:focus-within > .drop { opacity: 1; visibility: visible; transform: translateY(0); }
+    .nav-links .drop li { display: block; }
+    .nav-links .drop a {
+      display: block; padding: 9px 18px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.02em;
+      color: rgba(255,255,255,0.72); white-space: nowrap; text-transform: none;
+    }
+    .nav-links .drop a:hover { color: #fff; background: rgba(255,255,255,0.06); }
+    .nav-cta { display: flex; align-items: center; gap: 20px; flex-shrink: 0; }
+    .nav-cta-phone { text-align: right; }
+    .nav-quote {
+      display: inline-block; padding: 10px 18px;
+      background: var(--red, #c8391b); color: #fff;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; text-decoration: none;
+      transition: background .15s ease;
+    }
+    .nav-quote:hover { background: var(--red-hover, #b02f14); }
+    /* mobile accordion */
+    .nav-mobile-menu .m-group { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-mobile-menu .m-toggle {
+      width: 100%; text-align: left; background: none; border: 0;
+      padding: 16px 0; font: inherit; font-size: 15px; font-weight: 600;
+      color: #fff; cursor: pointer;
+    }
+    .nav-mobile-menu .m-sub { display: none; padding: 0 0 10px 14px; }
+    .nav-mobile-menu .m-group.open .m-sub { display: block; }
+    .nav-mobile-menu .m-group.open .caret { transform: rotate(180deg); }
+    .nav-mobile-menu .m-sub a {
+      padding: 11px 0; font-size: 14px; font-weight: 500;
+      color: rgba(255,255,255,0.72); border: 0;
+    }
+    .nav-mobile-menu .m-quote {
+      margin-top: 12px; background: var(--red, #c8391b); color: #fff;
+      text-align: center; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; font-size: 13px; border: 0;
+    }
+    @media (max-width: 1080px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-cta { display: none; }
+    }
 </style>
 </head>
 <body>
 
 <nav aria-label="Main navigation">
   <div class="nav-inner">
-    <div>
-      <div class="nav-brand-name"><a href="/" style="text-decoration:none">All Phase Contractors, Inc.</a></div>
+    <div class="nav-brand">
+      <div class="nav-brand-name"><a href="/" style="color:inherit;text-decoration:none">All Phase Contractors, Inc.</a></div>
       <div class="nav-brand-lic">CGC#1533136 · CBC#1266054</div>
     </div>
     <ul class="nav-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/sarasota-general-contractor/">Sarasota</a></li>
-      <li><a href="/pasco-county-general-contractor/">Pasco</a></li>
-      <li><a href="/hernando-county-general-contractor/">Hernando</a></li>
-      <li><a href="#detail">Details</a></li>
+      <li class="has-drop">
+        <a href="/services/" aria-haspopup="true" aria-expanded="false">Services <span class="caret" aria-hidden="true"></span></a>
+        <ul class="drop">
+          <li><a href="/services/roofing/">Roofing</a></li>
+          <li><a href="/services/kitchen-bath-remodeling/">Kitchen &amp; Bath</a></li>
+          <li><a href="/services/home-additions/">Home Additions</a></li>
+          <li><a href="/services/">All Services</a></li>
+        </ul>
+      </li>
+      <li><a href="/#work">Our Work</a></li>
+      <li class="has-drop">
+        <a href="/#areas" aria-haspopup="true" aria-expanded="false">Service Areas <span class="caret" aria-hidden="true"></span></a>
+        <ul class="drop">
+          <li><a href="/sarasota-general-contractor/">Sarasota County</a></li>
+          <li><a href="/manatee-county-general-contractor/">Manatee County</a></li>
+          <li><a href="/pasco-county-general-contractor/">Pasco County</a></li>
+          <li><a href="/hernando-county-general-contractor/">Hernando County</a></li>
+        </ul>
+      </li>
+      <li><a href="/#about">About</a></li>
     </ul>
-    <div>
-      <div class="nav-cta-label">Call Now</div>
-      <a href="tel:9414124901" class="nav-phone">941-412-4901</a>
+    <div class="nav-cta">
+      <a href="/#form" class="nav-quote">Free Estimate</a>
+      <div class="nav-cta-phone">
+        <div class="nav-cta-label">Call Now</div>
+        <a href="tel:9414124901" class="nav-phone">941-412-4901</a>
+      </div>
     </div>
+    <div class="nav-hamburger" onclick="toggleMenu()" role="button" tabindex="0" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="nav-mobile-menu" id="mobileMenu">
+    <div class="m-group">
+      <button class="m-toggle" onclick="toggleGroup(this)" aria-expanded="false">Services <span class="caret" aria-hidden="true"></span></button>
+      <div class="m-sub">
+      <a href="/services/roofing/" onclick="closeMenu()">Roofing</a>
+      <a href="/services/kitchen-bath-remodeling/" onclick="closeMenu()">Kitchen &amp; Bath</a>
+      <a href="/services/home-additions/" onclick="closeMenu()">Home Additions</a>
+      <a href="/services/" onclick="closeMenu()">All Services</a>
+      </div>
+    </div>
+    <a href="/#work" onclick="closeMenu()">Our Work</a>
+    <div class="m-group">
+      <button class="m-toggle" onclick="toggleGroup(this)" aria-expanded="false">Service Areas <span class="caret" aria-hidden="true"></span></button>
+      <div class="m-sub">
+      <a href="/sarasota-general-contractor/" onclick="closeMenu()">Sarasota County</a>
+      <a href="/manatee-county-general-contractor/" onclick="closeMenu()">Manatee County</a>
+      <a href="/pasco-county-general-contractor/" onclick="closeMenu()">Pasco County</a>
+      <a href="/hernando-county-general-contractor/" onclick="closeMenu()">Hernando County</a>
+      </div>
+    </div>
+    <a href="/#about" onclick="closeMenu()">About</a>
+    <a href="/#form" onclick="closeMenu()" class="m-quote">Get a Free Estimate</a>
+    <div class="nav-mobile-phone"><a href="tel:9414124901" style="color:inherit;text-decoration:none;">Call 941-412-4901</a></div>
   </div>
 </nav>
 
@@ -343,5 +453,26 @@
 }
 </script>
 
+
+<script>
+  function toggleMenu() {
+    var m = document.getElementById('mobileMenu');
+    var open = m.style.display === 'flex';
+    m.style.display = open ? 'none' : 'flex';
+    var h = document.querySelector('.nav-hamburger');
+    if (h) h.setAttribute('aria-expanded', String(!open));
+  }
+  function closeMenu() {
+    var m = document.getElementById('mobileMenu');
+    if (m) m.style.display = 'none';
+    var h = document.querySelector('.nav-hamburger');
+    if (h) h.setAttribute('aria-expanded', 'false');
+  }
+  function toggleGroup(btn) {
+    var g = btn.parentNode;
+    var open = g.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+  }
+</script>
 </body>
 </html>
