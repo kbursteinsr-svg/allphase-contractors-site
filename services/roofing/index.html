@@ -114,6 +114,34 @@
   }
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 
+
+    /* base nav chrome — present on index.html, missing on cloned pages */
+    .nav-mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--navy, #0f183c);
+      padding: 16px 24px 28px;
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+    .nav-mobile-menu a {
+      padding: 16px 0;
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav-mobile-phone { padding-top: 18px; font-weight: 700; color: #fff; }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; }
+    .nav-brand-name { font-size: 15px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #fff; }
+    .nav-brand-lic { font-size: 11px; font-weight: 400; opacity: .65; letter-spacing: .04em; margin-top: 3px; color: #fff; }
+    .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+    .nav-links > li > a { font-size: 12px; font-weight: 600; color: rgba(255,255,255,.55); text-decoration: none; letter-spacing: .06em; text-transform: uppercase; }
+    .nav-links > li > a:hover { color: #fff; }
+    .nav-cta-label { font-size: 9px; font-weight: 700; color: rgba(255,255,255,.4); letter-spacing: .12em; text-transform: uppercase; }
+    .nav-phone { font-size: 17px; font-weight: 800; color: #fff; text-decoration: none; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
     /* ── global nav: dropdowns + quote button ── */
     .nav-links { position: relative; }
     .nav-links > li { position: relative; }
