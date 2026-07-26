@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Ad landing pages — paid traffic only, excluded from organic index
+# (also carry a noindex tag)
+Disallow: /report/
+
+Sitemap: https://allphasecontractorsfl.com/sitemap.xml
