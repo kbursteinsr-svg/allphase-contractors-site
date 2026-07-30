@@ -353,12 +353,9 @@ fbq('track', 'PageView');
 
     <form id="leadForm" onsubmit="return submitForm(event)">
       <div class="form-grid">
-        <div class="form-group"><label for="firstName">First Name</label><input type="text" id="firstName" name="firstName" autocomplete="given-name" /></div>
-        <div class="form-group"><label for="lastName">Last Name</label><input type="text" id="lastName" name="lastName" autocomplete="family-name" /></div>
+        <div class="form-group"><label for="firstName">Name</label><input type="text" id="firstName" name="firstName" autocomplete="given-name" /></div>
         <div class="form-group"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(941) 555-0000" /></div>
-        <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" placeholder="you@email.com" /></div>
-        <div class="form-group"><label for="city">City / Area</label><input type="text" id="city" name="city" placeholder="Sarasota, Siesta Key, Venice..." /></div>
-        <div class="form-group"><label for="address">Project Address <span class="hint">(optional — speeds things up)</span></label><input type="text" id="address" name="address" placeholder="123 Main St, Sarasota, FL 34233" /></div>
+        <div class="form-group"><label for="email">Email <span class="hint">(optional)</span></label><input type="email" id="email" name="email" autocomplete="email" placeholder="you@email.com" /></div>
         <div class="form-group full">
           <label for="projectType">What do you need?</label>
           <select id="projectType" name="projectType">
