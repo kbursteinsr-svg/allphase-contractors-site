@@ -40,11 +40,9 @@
     var problems = [];
 
     var checks = [
-      { el: form.firstName, test: function (v) { return v.trim().length >= 1; }, msg: 'Please enter your first name.' },
-      { el: form.lastName,  test: function (v) { return v.trim().length >= 1; }, msg: 'Please enter your last name.' },
+      { el: form.firstName, test: function (v) { return v.trim().length >= 1; }, msg: 'Please enter your name.' },
       { el: form.phone,     test: function (v) { var d = digits(v); return d.length === 10 || (d.length === 11 && d[0] === '1'); }, msg: 'Enter a 10-digit phone number.' },
-      { el: form.email,     test: function (v) { return EMAIL_RE.test(v.trim()); }, msg: 'Enter a valid email address.' },
-      { el: form.city,      test: function (v) { return v.trim().length >= 2; }, msg: 'Please tell us your city or area.' },
+      { el: form.email,     test: function (v) { return v.trim() === '' || EMAIL_RE.test(v.trim()); }, msg: 'Enter a valid email address.' },
       { el: form.projectType, test: function (v) { return v.trim().length >= 1; }, msg: 'Please choose what you need.' }
     ];
 
@@ -79,13 +77,13 @@
     var eventId = 'lead-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
 
     var payload = {
-      firstName: form.firstName.value.trim(),
-      lastName: form.lastName.value.trim(),
-      phone: form.phone.value.trim(),
-      email: form.email.value.trim(),
-      city: form.city.value.trim(),
+      firstName: form.firstName ? form.firstName.value.trim() : '',
+      lastName: form.lastName ? form.lastName.value.trim() : '',
+      phone: form.phone ? form.phone.value.trim() : '',
+      email: form.email ? form.email.value.trim() : '',
+      city: form.city ? form.city.value.trim() : '',
       address: form.address ? form.address.value.trim() : '',
-      projectType: form.projectType.value.trim(),
+      projectType: form.projectType ? form.projectType.value.trim() : '',
       source: window.LEAD_SOURCE || 'allphase-website',
       eventId: eventId,
       eventSourceUrl: window.location.href,
