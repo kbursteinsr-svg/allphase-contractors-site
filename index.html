@@ -1474,6 +1474,12 @@
       .nav-cta { display: none; }
     }
 </style>
+  <!-- CallRail Dynamic Number Insertion. Swaps the displayed 941-412-4901 -> your CallRail tracking
+       number (941-200-3378) for qualifying visitors; targeting is configured in CallRail. The real
+       number in this HTML stays 941-412-4901 — CallRail swaps only what is rendered, and only for
+       qualifying visitors. REPLACE __CALLRAIL_SWAP_KEY__ with the key from CallRail (Settings > Tracking
+       > the number's JavaScript snippet), or paste CallRail's exact snippet in place of this tag. -->
+  <script type="text/javascript" src="//cdn.callrail.com/companies/511459086/__CALLRAIL_SWAP_KEY__/12/swap.js"></script>
 </head>
 <body>
 
