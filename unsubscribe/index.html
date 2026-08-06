@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex,nofollow">
+<title>Unsubscribe | All Phase Contractors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root { --navy:#0f1a2e; --navy-deep:#0a1220; --red:#c8391b; --white:#fff; --text:#1a1a1a; --text-mute:#666; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,sans-serif;color:var(--text);line-height:1.5;background:#f5f0e8;min-height:100vh;display:flex;flex-direction:column}
+  .site-header{background:var(--navy);padding:18px 40px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid var(--red)}
+  .logo{color:#fff;font-weight:800;font-size:15px;letter-spacing:.06em;text-transform:uppercase}
+  .logo small{display:block;font-weight:400;font-size:11px;opacity:.65;letter-spacing:.04em;margin-top:3px}
+  .header-cta{color:#fff;text-decoration:none;font-weight:700;font-size:15px}
+  .header-cta small{display:block;font-size:10px;opacity:.65;text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px;font-weight:500}
+  main{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 20px}
+  .card{background:#fff;max-width:560px;width:100%;padding:48px 44px;border-top:4px solid var(--red)}
+  h1{font-size:30px;font-weight:800;color:var(--navy);letter-spacing:-.02em;margin-bottom:14px;line-height:1.15}
+  p{color:var(--text-mute);font-size:15px;line-height:1.6;margin-bottom:22px}
+  label{display:block;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);margin-bottom:8px}
+  input{width:100%;padding:14px 16px;font-size:16px;font-family:inherit;border:1px solid rgba(15,26,46,.2);background:#fff;color:var(--text);border-radius:0}
+  input:focus{outline:none;border-color:var(--red)}
+  button{width:100%;margin-top:16px;padding:18px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;background:var(--red);color:#fff;border:none;cursor:pointer;font-family:inherit;transition:background .2s}
+  button:hover{background:#b02f14}
+  button:disabled{opacity:.55;cursor:wait}
+  .done{display:none;padding:28px;background:#f5f0e8;border-left:4px solid var(--red)}
+  .done h2{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:8px}
+  .done p{margin:0}
+  .err{display:none;margin-top:14px;padding:14px 16px;background:rgba(200,57,27,.08);border-left:3px solid var(--red);color:#8c2612;font-size:13px;line-height:1.6}
+  .err a{color:var(--navy);font-weight:700}
+  .fine{margin-top:26px;font-size:12px;color:#999;line-height:1.6}
+  .footer{background:var(--navy-deep);color:rgba(255,255,255,.6);padding:26px 40px;text-align:center;font-size:13px;letter-spacing:.04em}
+  .footer strong{color:#fff}
+  @media(max-width:600px){.site-header{padding:14px 20px}.card{padding:34px 24px}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">All Phase Contractors, Inc.<small>CGC#1533136 · CBC#1266054</small></div>
+  <a href="tel:9412003378" class="header-cta"><small>Call Now</small>941-200-3378</a>
+</header>
+
+<main>
+  <div class="card">
+    <div id="formWrap">
+      <h1>Unsubscribe</h1>
+      <p>Enter your email and we'll take you off the list. No more messages from us.</p>
+      <form id="unsubForm" onsubmit="return doUnsub(event)">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" required autocomplete="email" />
+        <button type="submit" id="unsubBtn">Unsubscribe me</button>
+      </form>
+      <div class="err" id="errMsg">
+        Something went wrong. Reply to the email you received, or call <a href="tel:9412003378">941-200-3378</a> and we'll remove you by hand.
+      </div>
+      <p class="fine">We only email property owners and managers about commercial construction work. We don't sell or share your address with anyone.</p>
+    </div>
+
+    <div class="done" id="doneMsg">
+      <h2>You're off the list.</h2>
+      <p>We won't email you again. If anything still arrives, call 941-200-3378 and we'll sort it out.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <p><strong>All Phase Contractors, Inc.</strong> · 5020 Clark Rd #511, Sarasota FL 34233 · 941-200-3378</p>
+</footer>
+
+<script>
+// Prefill from ?e= so a click from the email is a single button press.
+(function(){
+  var q = new URLSearchParams(window.location.search);
+  var e = q.get('e');
+  if (e && e.indexOf('@') > -1) document.getElementById('email').value = e;
+})();
+
+window.doUnsub = function(ev){
+  ev.preventDefault();
+  var btn = document.getElementById('unsubBtn');
+  var err = document.getElementById('errMsg');
+  var email = document.getElementById('email').value.trim();
+  err.style.display = 'none';
+  btn.disabled = true; btn.textContent = 'Removing...';
+
+  fetch('https://kbdigitalmkt.app.n8n.cloud/webhook/allphase-unsubscribe', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email: email,
+      list: 'gulfblvd-hospitality',
+      unsubscribedAt: new Date().toISOString(),
+      pageUrl: window.location.href
+    })
+  })
+  .then(function(res){
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    document.getElementById('formWrap').style.display = 'none';
+    document.getElementById('doneMsg').style.display = 'block';
+  })
+  .catch(function(){
+    btn.disabled = false; btn.textContent = 'Unsubscribe me';
+    err.style.display = 'block';
+  });
+  return false;
+};
+</script>
+</body>
+</html>
